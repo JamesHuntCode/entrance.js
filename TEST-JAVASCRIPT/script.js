@@ -1,5 +1,9 @@
 $(document).ready(function() {
     $(window).scroll(function() {
-        // Debugging happens in here...
+        // Debugging goes here...
+
+        if (isVisible($('#test'))) {
+            
+        }
     });
 });

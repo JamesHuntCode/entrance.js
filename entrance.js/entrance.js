@@ -29,21 +29,21 @@ function sideReveal(from, to, style, offset, arrayOfElements) {
     elementsToReveal = arrayOfElements; // Elements the user wants to reveal
 
     // Method behind revealing the elements from a specified direction
-    function revealFrom(direction, stle, offset, elements) {
+    function revealElements(direction, stle, offset, elements) {
         let numOfElements = elements.length;
 
         // Reveal Elements from direction specified
         if (direction == "left") {
-            
+            console.log("revealing from left - test");
         } else if (direction == "right") {
-
+            console.log("revealing from right - test");
         }
     }
 
     // Working out which direction the elements will be revealed from
     if (revealFrom === "left") {
-        revealFrom("left", revealStyle, revealOffset, elementsToReveal);
+        revealElements("left", revealStyle, revealOffset, elementsToReveal);
     } else if (revealFrom == "right") {
-        revealFrom("right", revealStyle, revealOffset, elementsToReveal);
+        revealElements("right", revealStyle, revealOffset, elementsToReveal);
     }
 }
