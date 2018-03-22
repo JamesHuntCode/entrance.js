@@ -30,14 +30,24 @@ function sideReveal(from, to, style, offset, arrayOfElements) {
 
     // Method behind revealing the elements from a specified direction
     function revealElements(direction, stle, offset, elements) {
-        let numOfElements = elements.length;
+        let fromLeft = (direction == "left");
+
+        let interval = 0;
+        let animationDuration = 1000;
 
         // Reveal Elements from direction specified
-        if (direction == "left") {
-            console.log("revealing from left - test");
-        } else if (direction == "right") {
-            console.log("revealing from right - test");
+        if (fromLeft) {
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].delay(interval).animate({opacity: '1'}, animationDuration);
+                interval += offset;
+            }
+        } else {
+            for (let i = elements.length - 1; i >= 0; i--) {
+                elements[i].delay(interval).animate({opacity: '1'}, animationDuration);
+                interval += offset;
+            }
         }
+        return false;
     }
 
     // Working out which direction the elements will be revealed from

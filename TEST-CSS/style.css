@@ -3,13 +3,20 @@
      margin: 0px;
      padding: 0px;
      overflow-x: hidden;
+
+     /* for test purposes - remove later */
+     height: 1500px;
  }
 
- #test {
-     height: 400px;
-     width: 400px;
+ .tester {
+     height: 200px;
+     width: 200px;
 
      background-color: red;
 
-     margin: 1000px auto;
+     margin: 300px auto;
+
+     border-radius: 25px;
+
+     opacity: 0;
  }
