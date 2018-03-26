@@ -17,6 +17,13 @@ function isVisible(element) {
     return isInsideViewport;
 }
 
+// Method to hide a group of elements stored in an array
+function hideArray(elements) {
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].hide();
+    }
+}
+
 // Method to reveal an array of elements from either side
 function sideReveal(from, to, style, offset, arrayOfElements) {
     // Required variables for this method
@@ -33,17 +40,23 @@ function sideReveal(from, to, style, offset, arrayOfElements) {
         let fromLeft = (direction == "left");
 
         let interval = 0;
-        let animationDuration = 1000;
+        let animationDuration = 750;
 
         // Reveal Elements from direction specified
         if (fromLeft) {
             for (let i = 0; i < elements.length; i++) {
-                elements[i].delay(interval).animate({opacity: '1'}, animationDuration);
+                // Fade elements
+                if (style == "fade") { elements[i].delay(interval).delay(interval).fadeIn(animationDuration); }
+                // Drop down elements
+                else if (style == "drop") { elements[i].delay(interval).delay(interval).slideDown(animationDuration); }
                 interval += offset;
             }
         } else {
             for (let i = elements.length - 1; i >= 0; i--) {
-                elements[i].delay(interval).animate({opacity: '1'}, animationDuration);
+                // Fade elements
+                if (style == "fade") { elements[i].delay(interval).delay(interval).fadeIn(animationDuration); }
+                // Drop down elements
+                else if (style == "drop") { elements[i].delay(interval).delay(interval).slideDown(animationDuration); }
                 interval += offset;
             }
         }
